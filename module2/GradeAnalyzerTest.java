@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays; 
  
 public class GradeAnalyzerTest { 
- 
+
+    // Five existing test cases.
+
     @Test
     void calculateAverage_returnsZero_whenListIsEmpty() { 
         ArrayList<Integer> scores = new ArrayList<>(); 
@@ -34,5 +36,13 @@ public class GradeAnalyzerTest {
     void calculateAverage_handlesAllSameValues() { 
         ArrayList<Integer> scores = new ArrayList<>(Arrays.asList(88, 88, 88)); 
         assertEquals(88.0, GradeAnalyzer.calculateAverage(scores)); 
+    }
+
+    // Additional test case.
+
+    @Test
+    void calculateAverage_returnsCorrectAverage_forListOf10Scores() {
+        ArrayList<Integer> scores = new ArrayList<>(Arrays.asList(55, 60, 65, 70, 75, 80, 85, 90, 95, 100)); 
+        assertEquals(77.5, GradeAnalyzer.calculateAverage(scores)); 
     }
 }
